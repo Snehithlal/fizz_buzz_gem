@@ -1,4 +1,6 @@
-class Fizzbuzz
+
+require './error_handling'
+class Fizzbuzz < ErrorHandling
   def self.isfizz(*args)
      if (err_handler(args))
        low_limit = args[0]
@@ -13,18 +15,6 @@ class Fizzbuzz
       puts array.join(",")
     end
   end
-
-  def self.err_handler(args)
-    raise "invalid number of arguments " unless args.length == 2
-    low_limit = args[0]
-    up_limit = args[1]
-    unless(low_limit.is_a?(Integer) && up_limit.is_a?(Integer))
-      raise "Enter valid input"
-    end
-    raise "lower limit is greater than upper limit " if low_limit > up_limit
-     true
-  end
-
 end
 
-Fizzbuzz.isfizz(3,10,22)
+Fizzbuzz.isfizz(3,10)

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'fizzbuzz_pro'
-  s.version     = '0.0.4'
+  s.version     = '0.0.5'
   s.date        = '2019-09-05'
   s.summary     = "created!"
   s.description = "fizzbuzz gem"
