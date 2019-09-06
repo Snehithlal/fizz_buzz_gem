@@ -1,10 +1,9 @@
 
 require './error_handling'
-class Fizzbuzz < ErrorHandling
-  def self.isfizz(*args)
-     if (err_handler(args))
-       low_limit = args[0]
-       up_limit = args[1]
+class Fizzbuzz
+    def self.isfizz(*args)
+     if (ErrorHandling.err_handler(*args))
+      low_limit, up_limit = split_arguments(*args)
        array = []
        (low_limit..up_limit).each do |number|
           value = ""
@@ -14,6 +13,12 @@ class Fizzbuzz < ErrorHandling
         end
       puts array.join(",")
     end
+  end
+
+  def self.split_arguments(*args)
+    low_limit = args[0]
+    up_limit = args[1]
+    return low_limit,up_limit
   end
 end
 
